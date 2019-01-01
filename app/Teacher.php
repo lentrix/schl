@@ -1,0 +1,26 @@
+<?php
+
+namespace App;
+
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\DB;
+
+class Teacher extends Model
+{
+    public $fillable = ['title', 'lname', 'fname', 'mname', 'specialty','dept_id'];
+
+    public function fullName() {
+        return $this->lname . ", " . $this->fname . " " . substr($this->mname,0,1) . ".";
+    }
+
+    public static function specialties() {
+        return DB::table('teachers')
+            ->selectRaw('DISTINCT specialty')
+            ->orderBy('specialty')
+            ->pluck('specialty');
+    }
+
+    public function department() {
+        return $this->belongsTo('App\Department', 'dept_id');
+    }
+}

@@ -1,0 +1,35 @@
+.subtitle {
+    color: #ddd;
+    font-size: 0.8em;
+}
+
+.logo b {
+    color:yellowgreen;
+}
+
+.large-text {
+    font-size: 1.5em;
+}
+
+.clickable {
+    cursor: pointer;
+}
+
+.annotation {
+    font-style: italic;
+    color: #888;
+    font-size: 0.9em;
+}
+
+.page-actions {
+    margin-bottom: 15px;
+}
+
+.profile-pic {
+    width: 100%;
+}
+
+.table-bordered th,
+.table-bordered td {
+    border-color: #ddd !important;
+}
