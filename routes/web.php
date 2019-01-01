@@ -41,4 +41,6 @@ Route::get('/roles', 'RoleController@index');
 Route::post('/roles', 'RoleController@store');
 Route::post('/roles/destroy', 'RoleController@destroy');
 
+Route::resource('/programs', 'ProgramController');
 
+Route::resource('/courses', 'CourseController');
