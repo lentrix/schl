@@ -36,6 +36,8 @@ Route::group(['middleware'=>['role:admin']], function() {
     Route::resource('/rooms', 'RoomController');
 
     Route::resource('/depts', 'DepartmentController');
+
+    Route::resource('/periods', 'PeriodController');
 });
 
 Route::resource('/teachers', 'TeacherController');

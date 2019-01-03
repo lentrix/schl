@@ -176,7 +176,7 @@ return [
         'ADMINISTRATOR',
         [
             'text' => 'School Period',
-            'url'  => 'admin/periods',
+            'url'  => 'periods',
             'icon' => 'calendar',
         ],
         [
