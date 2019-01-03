@@ -34,6 +34,8 @@ Route::group(['middleware'=>['role:admin']], function() {
     Route::post('/users/{user}/set-active', 'UsersController@setActive');
     
     Route::resource('/rooms', 'RoomController');
+
+    Route::resource('/depts', 'DepartmentController');
 });
 
 Route::resource('/teachers', 'TeacherController');
