@@ -43,4 +43,4 @@ Route::post('/roles/destroy', 'RoleController@destroy');
 
 Route::resource('/programs', 'ProgramController');
 
-Route::resource('/courses', 'CourseController');
+Route::resource('/courses', 'CourseController');    
