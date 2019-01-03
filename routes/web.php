@@ -32,6 +32,8 @@ Route::group(['middleware'=>['role:admin']], function() {
     Route::post('/users/remove-role', 'UsersController@removeRole');
     Route::post('/users/{user}/change-password', 'UsersController@changePassword');
     Route::post('/users/{user}/set-active', 'UsersController@setActive');
+    
+    Route::resource('/rooms', 'RoomController');
 });
 
 Route::resource('/teachers', 'TeacherController');
