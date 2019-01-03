@@ -3,8 +3,16 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\DB;
 
 class Room extends Model
 {
     public $fillable = ['code','name','building','floor','capacity'];
+
+    public static function buildings() {
+        return DB::table('rooms')
+            ->selectRaw('DISTINCT building')
+            ->orderBy('building')
+            ->pluck('building');
+    }
 }

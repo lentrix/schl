@@ -12,12 +12,14 @@
     @include('partials.error')
 
     @include('courses._create')
+
+    @include('courses._filter')
     
     <div class="row">
         <div class="col-md-6">
             <div class="page-actions">
                 <button id="create-btn" class="btn btn-primary btn-sm"><i class="fa fa-plus"></i> Add Course</button>
-                <button id="filter-btn" class="btn btn-default btn-sm"><i class="fa fa-search"></i> Filter by Department</button>
+                <button id="filter-btn" class="btn btn-default btn-sm"><i class="fa fa-search"></i> Filter by Program</button>
             </div>
         </div>
         <div class="col-md-6">
@@ -84,6 +86,9 @@
         })
         $("#create-btn").click(function(){
             $("#createModal").modal('show');
+        })
+        $("#filter-btn").click(function(){
+            $("#filterModal").modal('show');
         })
     })
     </script>

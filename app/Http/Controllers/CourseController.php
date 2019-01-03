@@ -17,6 +17,12 @@ class CourseController extends Controller
                     ->get();
         }
 
+        if(isset($_GET['program_id'])) {
+            $courses = Course::where('program_id', $_GET['program_id'])
+                ->orderBy('description')
+                ->get();    
+        }
+
         return view('courses.index', compact('courses'));
     }
 

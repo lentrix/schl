@@ -17,6 +17,12 @@ class RoomController extends Controller
                     ->get();
         }
 
+        if(isset($_GET['building'])){
+            $rooms = Room::where('building', $_GET['building'])
+                    ->orderBy('code')
+                    ->get();
+        }
+
         return view('rooms.index', compact('rooms'));
     }
 

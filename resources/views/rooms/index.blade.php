@@ -12,6 +12,8 @@
     @include('partials.error')
 
     @include('rooms._create')
+
+    @include('rooms._filter')
     
     <div class="row">
         <div class="col-md-6">
@@ -82,6 +84,10 @@
         })
         $("#create-btn").click(function(){
             $("#createModal").modal('show');
+        })
+
+        $("#filter-btn").click(function(){
+            $("#filterModal").modal('show');
         })
     })
     </script>
