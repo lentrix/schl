@@ -130,6 +130,11 @@ return [
             'text'        => 'Courses',
             'url'         => 'courses',
             'icon'        => 'list-alt',
+        ],
+        [
+            'text'        => 'Classes',
+            'url'         => 'classes',
+            'icon'        => 'list',
         ],        
         'TRANSACTIONS',
         [

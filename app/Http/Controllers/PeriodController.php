@@ -52,4 +52,13 @@ class PeriodController extends Controller
 
         return redirect("/periods/$period->id");
     }
+
+    public function changeStatus(Request $request, Period $period) {
+        $period->status = $request['status'];
+        $period->save();
+
+        session()->flash('info', "The status of $period->accronym has been changed to $period->status");
+
+        return redirect("/periods/$period->id");
+    }
 }

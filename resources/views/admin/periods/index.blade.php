@@ -79,7 +79,7 @@
     $(document).ready(function(){
         $(".clickable").click(function(evt){
             var id = evt.currentTarget.id;
-            document.location = "{{url('/depts')}}/" + id;
+            document.location = "{{url('/periods')}}/" + id;
         })
         $("#create-btn").click(function(){
             $("#createModal").modal('show');

@@ -15,4 +15,9 @@ class Room extends Model
             ->orderBy('building')
             ->pluck('building');
     }
+
+    public static function list() {
+        return static::orderBy('name')
+            ->pluck('name','id');
+    }
 }

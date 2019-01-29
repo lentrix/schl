@@ -32,12 +32,13 @@ Route::group(['middleware'=>['role:admin']], function() {
     Route::post('/users/remove-role', 'UsersController@removeRole');
     Route::post('/users/{user}/change-password', 'UsersController@changePassword');
     Route::post('/users/{user}/set-active', 'UsersController@setActive');
-    
+
     Route::resource('/rooms', 'RoomController');
 
     Route::resource('/depts', 'DepartmentController');
 
     Route::resource('/periods', 'PeriodController');
+    Route::post('/periods/status/{period}', 'PeriodController@changeStatus');
 
     Route::resource('/levels', 'LevelController');
 });
@@ -51,4 +52,9 @@ Route::post('/roles/destroy', 'RoleController@destroy');
 
 Route::resource('/programs', 'ProgramController');
 
-Route::resource('/courses', 'CourseController');    
+Route::resource('/courses', 'CourseController');
+
+Route::resource('/classes', 'ClassController');
+
+Route::post('/schedules', 'ScheduleController@store');
+Route::delete('/schedules', 'ScheduleController@destroy');
