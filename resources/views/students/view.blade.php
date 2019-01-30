@@ -5,13 +5,14 @@
 
 @section('content_header')
     <div class="pull-right">
+        <a href="{{url('/enrol/' . $student->id)}}" class="btn btn-info"><i class="fa fa-graduation-cap"></i> Enrolment</a>
         <a href="{{url('/students/')}}/{{$student->id}}/edit" class="btn btn-success btn-sm"><i class="fa fa-edit"></i> Update</a>
     </div>
     <h1>View Student: {{$student->fullName()}}</h1>
-@stop   
+@stop
 
 @section('content')
-    
+
     <div class="row">
         <div class="col-md-3 col-sm-5">
             <img src="{{asset('images/pic1.jpg')}}" class="profile-pic" alt="profile picture">
@@ -44,9 +45,9 @@
 @stop
 
 @section('css')
-    
+
 @stop
 
 @section('js')
-    
+
 @stop

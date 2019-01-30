@@ -22,4 +22,20 @@ class Student extends Model
     public function fullAddress() {
         return $this->barangay . ", " . $this->town . ", " . $this->province;
     }
+
+    public function enrols() {
+        return $this->hasMany('App\Enrol', 'student_id');
+    }
+
+    public function activeEnrolment() {
+        // $en = Enrol::with('period')->whereHas('period', function($query) {
+        //     $query->where('status','<>','expired');
+        // })->where('student_id', $this->id);
+
+        $ens = Enrol::with('period')->whereHas('period', function($query) {
+            $query->where('status','<>','expired');
+        })->where('student_id', $this->id)->first();
+
+        return $ens;
+    }
 }

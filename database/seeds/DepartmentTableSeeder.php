@@ -16,32 +16,32 @@ class DepartmentTableSeeder extends Seeder
                 'accronym' => 'PreElem',
                 'name' => 'Pre-Elementary',
                 'program' => [
-                    'accronym'  =>  'K1',
-                    'name'      =>  'Kindergarten 1'
+                    'accronym'  =>  'Pre-Elem',
+                    'name'      =>  'Pre-Elementary'
                 ]
             ],
             [
                 'accronym' => 'Elem',
                 'name' => 'Elementary',
                 'program' => [
-                    'accronym'  =>  'G1',
-                    'name'      =>  'Grade 1'
+                    'accronym'  =>  'Elem',
+                    'name'      =>  'Elementary'
                 ]
             ],
             [
                 'accronym' => 'JHS',
                 'name' => 'Junior High School',
                 'program' => [
-                    'accronym'  =>  'G7',
-                    'name'      =>  'Grade 7'
+                    'accronym'  =>  'JHS',
+                    'name'      =>  'Junior High School'
                 ]
             ],
             [
                 'accronym' => 'SHS',
                 'name' => 'Senior High School',
                 'program' => [
-                    'accronym'  =>  'G11',
-                    'name'      =>  'Grade 11'
+                    'accronym'  =>  'SHS',
+                    'name'      =>  'Senior High School'
                 ]
             ],
             [

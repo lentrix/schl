@@ -58,3 +58,5 @@ Route::resource('/classes', 'ClassController');
 
 Route::post('/schedules', 'ScheduleController@store');
 Route::delete('/schedules', 'ScheduleController@destroy');
+
+Route::get('/enrol/{student}', 'EnrolController@enrol');
