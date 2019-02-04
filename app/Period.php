@@ -12,7 +12,7 @@ class Period extends Model
         return $this->hasMany('App\Classes');
     }
 
-    public static function list() {
+    public static function listEnrolment() {
         return static::where('status','enrolment')->pluck('name', 'id');
     }
 

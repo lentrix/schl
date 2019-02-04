@@ -25,6 +25,10 @@ class Classes extends Model
         return $this->hasMany('App\Schedule');
     }
 
+    public function enrolClasses() {
+        return $this->hasMany('App\EnrolClass', 'class_id');
+    }
+
     public function getScheduleTextAttribute() {
         if(count($this->schedules)==0) {
             return 'Unscheduled';

@@ -21,11 +21,13 @@ class CreateEnrolsTable extends Migration
             $table->integer('period_id')->unsigned();
             $table->string('type', 15);//old, new, transferee, shiftee
             $table->string('status', 15)->default('active'); //active, withdrawn
+            $table->integer('section_id')->unsigned()->nullable();
 
             $table->foreign('student_id')->references('id')->on('students');
             $table->foreign('program_id')->references('id')->on('programs');
             $table->foreign('level_id')->references('id')->on('levels');
             $table->foreign('period_id')->references('id')->on('periods');
+            $table->foreign('section_id')->references('id')->on('sections');
             $table->timestamps();
         });
     }

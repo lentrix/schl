@@ -60,3 +60,5 @@ Route::post('/schedules', 'ScheduleController@store');
 Route::delete('/schedules', 'ScheduleController@destroy');
 
 Route::get('/enrol/{student}', 'EnrolController@enrol');
+Route::post('/enrol', 'EnrolController@store');
+Route::get('/enrol/{enrol}', 'EnrolController@show');

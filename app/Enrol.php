@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Enrol extends Model
 {
-    public $fillable = ['student_id', 'program_id', 'level_id', 'type', 'status'];
+    public $fillable = ['student_id', 'program_id', 'level_id', 'type', 'status', 'period_id'];
 
 
     public function student() {
@@ -23,5 +23,9 @@ class Enrol extends Model
 
     public function period() {
         return $this->belongsTo('App\Period', 'period_id');
+    }
+
+    public function enrolClasses() {
+        return $this->hasMany('App\EnrolClass', 'enrol_id');
     }
 }

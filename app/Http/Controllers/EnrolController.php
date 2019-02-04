@@ -22,4 +22,30 @@ class EnrolController extends Controller
             return view('enrols.create', ['student'=>$student]);
         }
     }
+
+    public function store(Request $request) {
+        $this->validate($request, [
+            'student_id' => 'required|integer',
+            'program_id' => 'required|integer',
+            'level_id' => 'required|integer',
+            'period_id' => 'required|integer',
+            'type' => 'required|string',
+            'status' => 'required|string',
+        ]);
+
+        $en = Enrol::create([
+            'student_id' => $request['student_id'],
+            'program_id' => $request['program_id'],
+            'level_id' => $request['level_id'],
+            'period_id' => $request['period_id'],
+            'type' => $request['type'],
+            'status' => $request['status']
+        ]);
+
+        return redirect('/enrol/' . $en->student_id);
+    }
+
+    public function show(Enrol $enrol) {
+        return view('enrols.view', compact('enrol'));
+    }
 }
