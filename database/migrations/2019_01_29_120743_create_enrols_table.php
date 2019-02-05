@@ -18,6 +18,7 @@ class CreateEnrolsTable extends Migration
             $table->string('student_id', 15);
             $table->integer('program_id')->unsigned();
             $table->integer('level_id')->unsigned();
+            $table->integer('strand_id')->unsigned()->nullable();
             $table->integer('period_id')->unsigned();
             $table->string('type', 15);//old, new, transferee, shiftee
             $table->string('status', 15)->default('active'); //active, withdrawn
@@ -26,6 +27,7 @@ class CreateEnrolsTable extends Migration
             $table->foreign('student_id')->references('id')->on('students');
             $table->foreign('program_id')->references('id')->on('programs');
             $table->foreign('level_id')->references('id')->on('levels');
+            $table->foreign('strand_id')->references('id')->on('strands');
             $table->foreign('period_id')->references('id')->on('periods');
             $table->foreign('section_id')->references('id')->on('sections');
             $table->timestamps();

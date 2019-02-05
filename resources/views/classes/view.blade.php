@@ -4,8 +4,8 @@
 @section('title', 'View Class: ' . $class->id)
 
 @section('content_header')
-    <h1>View Course: {{$class->id}}</h1>
-@stop   
+    <h1>View Class: ID# {{$class->id}}</h1>
+@stop
 
 @section('content')
 
@@ -39,8 +39,8 @@
             <hr>
             <div class="form-group">
             <div class="pull-right">
-                <button title="Add a schedule" 
-                        class="btn btn-primary btn-sm" 
+                <button title="Add a schedule"
+                        class="btn btn-primary btn-sm"
                         id="btn-add-schedule">
                     <i class="fa fa-plus"></i> Add Schedule
                 </button>
@@ -51,7 +51,7 @@
                 <div class="alert alert-warning">
                     <strong>Warning!</strong> This class do not have a schedule.
                 </div>
-            @else 
+            @else
                 <table class="table table-striped">
                     <thead>
                         <th>Start</th>
@@ -68,7 +68,7 @@
                             <td>{{$sched->days}}</td>
                             <td>{{$sched->room->name}}</td>
                             <td>
-                                <button class="btn btn-danger btn-xs pull-right btn-remove-sched" 
+                                <button class="btn btn-danger btn-xs pull-right btn-remove-sched"
                                         title="Remove Schedule" id="{{$sched->id}}">
                                     <i class="fa fa-trash"></i>
                                 </button>

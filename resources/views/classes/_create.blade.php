@@ -10,16 +10,16 @@
             {!! Form::open(['url'=>"/classes/", 'method'=>'post'])  !!}
 
                 <div class="modal-body">
-                
+
                     <div class="form-group">
                         <?= Form::label('course_id', 'Course'); ?>
-                        <?= Form::select('course_id', 
+                        <?= Form::select('course_id',
                             \App\Course::orderBy('description')->pluck('description','id'),
                             null,['class'=>'form-control', 'placeholder'=>'Select a course']); ?>
                     </div>
                     <div class="form-group">
                         <?= Form::label('period_id', 'School Period'); ?>
-                        <?= Form::select('period_id', \App\Period::list(),
+                        <?= Form::select('period_id', \App\Period::listEnrolment(),
                             null,['class'=>'form-control','placeholder'=>'Select a period']); ?>
                     </div>
                     <div class="form-group">
@@ -35,7 +35,7 @@
                         <?= Form::label('pay_units', 'Pay Units'); ?>
                         <?= Form::text('pay_units',null,['class'=>'form-control']); ?>
                     </div>
-                    
+
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-close"></i> Close</button>

@@ -50,6 +50,13 @@
             </div>
 
             <div class="form-group">
+                <?= Form::label('strand_id', 'Track/Strand (for SHS) only'); ?>
+                <?= Form::select('strand_id',
+                    \App\Strand::list(),
+                    null,['class'=>'form-control', 'placeholder'=>'Select a strand']); ?>
+            </div>
+
+            <div class="form-group">
                 <?= Form::label('level_id', 'Level'); ?>
                 <?= Form::select('level_id',
                     \App\Level::pluck('name','id'),

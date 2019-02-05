@@ -13,7 +13,7 @@ class EnrolClass extends Model
     }
 
     public function class() {
-        return $this->belongsTo('App\Class', 'class_id');
+        return $this->belongsTo('App\Classes', 'class_id');
     }
 
 }

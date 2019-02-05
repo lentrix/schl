@@ -41,7 +41,13 @@
             <h4>Enrolment Details</h4>
             <table class="table table-bordered table-striped">
                 <tr><th>Period</th><td>{{$enrol->period->name}}</td></tr>
-                <tr><th>Program</th><td>{{$enrol->program->name}}</td></tr>
+                <tr>
+                    <th>Program</th>
+                    <td>
+                        {{$enrol->program->name}}
+                        {{ $enrol->strand_id>0 ? " - " . $enrol->strand->identityString():""}}
+                    </td>
+                </tr>
                 <tr><th>Level</th><td>{{$enrol->level->name}}</td></tr>
                 <tr><th>Type</th><td>{{$enrol->type}}</td></tr>
                 <tr><th>Status</th><td>{{$enrol->status}}</td></tr>

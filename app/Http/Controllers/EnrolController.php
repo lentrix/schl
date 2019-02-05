@@ -28,6 +28,7 @@ class EnrolController extends Controller
             'student_id' => 'required|integer',
             'program_id' => 'required|integer',
             'level_id' => 'required|integer',
+            'strand_id' => 'integer',
             'period_id' => 'required|integer',
             'type' => 'required|string',
             'status' => 'required|string',
@@ -37,6 +38,7 @@ class EnrolController extends Controller
             'student_id' => $request['student_id'],
             'program_id' => $request['program_id'],
             'level_id' => $request['level_id'],
+            'strand_id' => $request['strand_id'],
             'period_id' => $request['period_id'],
             'type' => $request['type'],
             'status' => $request['status']
