@@ -20,6 +20,7 @@ class CreateClassesTable extends Migration
             $table->integer('teacher_id')->unsigned();
             $table->float('credit_units');
             $table->float('pay_units');
+            $table->string('scope')->nullable();
             $table->foreign('course_id')->references('id')->on('courses');
             $table->foreign('period_id')->references('id')->on('periods');
             $table->foreign('teacher_id')->references('id')->on('teachers');

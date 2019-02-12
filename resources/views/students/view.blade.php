@@ -5,7 +5,7 @@
 
 @section('content_header')
     <div class="pull-right">
-        <a href="{{url('/enrol/' . $student->id)}}" class="btn btn-info"><i class="fa fa-graduation-cap"></i> Enrolment</a>
+        <a href="{{url('/enrols/' . $student->id)}}" class="btn btn-info"><i class="fa fa-graduation-cap"></i> Enrolment</a>
         <a href="{{url('/students/')}}/{{$student->id}}/edit" class="btn btn-success btn-sm"><i class="fa fa-edit"></i> Update</a>
     </div>
     <h1>View Student: {{$student->fullName()}}</h1>

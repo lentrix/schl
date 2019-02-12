@@ -4,15 +4,29 @@
 @section('title', 'View Enrolment')
 
 @section('content_header')
+    <div class="pull-right form-group">
+        <a href="{{url('/enrols/' . $enrol->id . '/edit')}}" class="btn btn-primary">
+            <i class="fa fa-edit"></i> Update Enrolment
+        </a>
+        <button class="btn btn-info">
+            <i class="fa fa-plus"></i> Add to Section
+        </button>
+        <button class="btn btn-success" id="btnAddClass">
+            <i class="fa fa-plus"></i> Add Class
+        </button>
+    </div>
     <h1>View Enrolment</h1>
+
 @stop
 
 @section('content')
 
+    @include('enrols._add-class')
     @include('partials.error')
 
     <div class="row">
         <div class="col-md-4">
+
             <h4>Personal Details</h4>
             <table class="table table-bordered table-striped">
                 <tr>
@@ -38,6 +52,7 @@
             </table>
         </div>
         <div class="col-md-8">
+
             <h4>Enrolment Details</h4>
             <table class="table table-bordered table-striped">
                 <tr><th>Period</th><td>{{$enrol->period->name}}</td></tr>
@@ -56,6 +71,24 @@
         </div>
     </div>
 
+    <div class="row">
+        <div class="col-md-12">
+            <h4>Class Schedule</h4>
+            <table class="table table-bordered table-striped">
+                <thead>
+                    <tr>
+                        <th>Time</th>
+                        <th>Day</th>
+                        <th>Course No</th>
+                        <th>Description</th>
+                        <th>Venue</th>
+                        <th>Teacher</th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+    </div>
+
 @stop
 
 @section('css')
@@ -69,8 +102,9 @@
             var id = evt.currentTarget.id;
             document.location = "{{url('/depts')}}/" + id;
         })
-        $("#create-btn").click(function(){
-            $("#createModal").modal('show');
+        $("#btnAddClass").click(function(){
+            $("#modalAddClass").modal('show');
+            console.log("add class.");
         })
     })
     </script>

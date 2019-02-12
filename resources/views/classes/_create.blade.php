@@ -35,6 +35,12 @@
                         <?= Form::label('pay_units', 'Pay Units'); ?>
                         <?= Form::text('pay_units',null,['class'=>'form-control']); ?>
                     </div>
+                    <div class="form-group">
+                        <?= Form::label('scope', 'Scope'); ?>
+                        <?= Form::text('scope',null,[
+                            'class'=>'form-control',
+                            'placeholder'=>'college, shs, bsit, 1, g1, k1, etc.']); ?>
+                    </div>
 
                 </div>
                 <div class="modal-footer">

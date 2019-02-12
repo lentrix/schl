@@ -16,12 +16,12 @@ class LevelsTableSeeder extends Seeder
             [
                 'code' => 'K1',
                 'name' => 'Kindergarten 1',
-                'category' => 'kinder'
+                'category' => 'pre-elem'
             ],
             [
                 'code' => 'K2',
                 'name' => 'Kindergarten 2',
-                'category' => 'kinder'
+                'category' => 'pre-elem'
             ],
             [
                 'code' => 'G1',

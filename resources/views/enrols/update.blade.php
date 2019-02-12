@@ -1,15 +1,17 @@
 
 @extends('adminlte::page')
 
-@section('title', 'Create Enrolment')
+@section('title', 'Update Enrolment')
 
 @section('content_header')
-    <h1>Create Enrolment</h1>
+    <h1>Update Enrolment</h1>
 @stop
 
 @section('content')
 
-    @include('partials.error')
+@include('partials.error')
+
+<?php $student = $enrol->student; ?>
 
     <div class="row">
         <div class="col-md-4">
@@ -31,19 +33,16 @@
                     <td>{{$student->fullAddress()}}</td>
                 </tr>
             </table>
-            <div class="alert alert-warning">
-                Not yet enrolled.
-            </div>
         </div>
         <div class="col-md-8">
 
-            {!! Form::open(['url'=>'/enrols', 'method'=>'post'])  !!}
+            {!! Form::model($enrol, ['url'=>"/enrols/$enrol->id", 'method'=>'patch'])  !!}
 
             @include('enrols._form')
 
             <div class="form-group">
                 <button class="btn btn-primary" type="submit">
-                    New Enrolment
+                    Update Enrolment
                 </button>
             </div>
 
@@ -59,15 +58,5 @@
 @stop
 
 @section('js')
-    <script>
-    $(document).ready(function(){
-        $(".clickable").click(function(evt){
-            var id = evt.currentTarget.id;
-            document.location = "{{url('/depts')}}/" + id;
-        })
-        $("#create-btn").click(function(){
-            $("#createModal").modal('show');
-        })
-    })
-    </script>
+    <script> console.log('Hi!'); </script>
 @stop

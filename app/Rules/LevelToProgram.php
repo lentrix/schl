@@ -4,16 +4,18 @@ namespace App\Rules;
 
 use Illuminate\Contracts\Validation\Rule;
 
-class CheckEndTime implements Rule
+class LevelToProgram implements Rule
 {
+    private $program;
+    private $level_id;
     /**
      * Create a new rule instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct($program_id)
     {
-        //
+        $this->program = \App\Program::find($program_id);
     }
 
     /**
@@ -25,7 +27,13 @@ class CheckEndTime implements Rule
      */
     public function passes($attribute, $value)
     {
-        //
+        $level = \App\Level::find($value);
+
+        if( strcasecmp($level->category,$this->program->accronym)==0 ) {
+            return true;
+        }else {
+            return strcasecmp($level->category,'college')==0;
+        }
     }
 
     /**
@@ -35,6 +43,6 @@ class CheckEndTime implements Rule
      */
     public function message()
     {
-        return 'The validation error message.';
+        return 'The level is not compatible with the program.';
     }
 }

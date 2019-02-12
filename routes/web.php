@@ -59,6 +59,10 @@ Route::resource('/classes', 'ClassController');
 Route::post('/schedules', 'ScheduleController@store');
 Route::delete('/schedules', 'ScheduleController@destroy');
 
-Route::get('/enrol/{student}', 'EnrolController@enrol');
-Route::post('/enrol', 'EnrolController@store');
-Route::get('/enrol/{enrol}', 'EnrolController@show');
+Route::get('/enrols/{student}', 'EnrolController@enrol');
+Route::get('/enrols/create/{student}', 'EnrolController@create');
+Route::get('/enrols/{enrol}/view', 'EnrolController@show');
+Route::get('/enrols/{enrol}/edit', 'EnrolController@edit');
+Route::patch('/enrols/{enrol}', 'EnrolController@update');
+Route::post('/enrols', 'EnrolController@store');
+Route::post('/enrols/{enrol}/add-class', 'EnrolController@addClass');
